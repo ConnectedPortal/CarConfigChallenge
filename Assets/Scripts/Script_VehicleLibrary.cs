@@ -6,20 +6,28 @@ using UnityEngine;
 
 public class Script_VehicleLibrary : ScriptableObject
 {
-    [SerializeField] public Vehicles[] vehicleModel;
-}
+    [SerializeField] public Vehicles vehicles;
 
-public enum VehicleColour
-{
-    Red = 0,
-    Yellow = 1,
-    Green = 2,
-    Blue = 3,
-    Black = 4
-}
+    [System.Serializable]
+    public class Vehicles
+    {
+        [Header("Core Components")]
+        public VehicleName vehicleName;
+        public GameObject vehicleModel;
+        public string vehiclePrice;
 
-[System.Serializable]
-public class Vehicles
-{
-    public GameObject vehicleModel;
+        [Header("Stats")]
+        public float vehicleSpeed;
+        public float vehicleAcceleration;
+        public float vehicleHandling;
+    }
+
+    public enum VehicleName
+    {
+        RaceCar = 0,
+        Sedan = 1,
+        SUV = 2,
+        Tractor = 3,
+        Delivery = 4
+    }
 }

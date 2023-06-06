@@ -5,101 +5,89 @@ using UnityEngine;
 public class Script_VehicleButtons : MonoBehaviour
 {
     [Header("VehicleSelection")]
-    public Vehicles[] vehicleModel;
-    VehicleColour vehicleColour;
+    [SerializeField] public ScriptableObject[] vehicles;
+    public bool isRaceCar;
+    public bool isSedan;
+    public bool isSUV;
+    public bool isTractor;
+    public bool isDelivery;
 
     public void ChosenRaceCar()
     {
-        foreach (var vehicle in vehicleModel)
+        foreach (ScriptableObject vehicleObject in vehicles)
         {
-
+            if (vehicleObject.name == "Object_RaceCar")
+            {
+                Falsify();
+                isRaceCar = true;
+                Debug.Log("Object: " + vehicleObject);
+                Debug.Log("Race Car = " + isRaceCar);
+            }
         }
-    }
-
-    /*
-    [Header("Vehicle Check")]
-    public bool chosenRaceCar;
-    public bool chosenSedan;
-    public bool chosenSUV;
-    public bool chosenTractor;
-    public bool chosenDelivery;
-
-    //Would be good to put this in an array instead
-    [Header("Vehicle Models")]
-    public GameObject raceCar;
-    public GameObject sedan;
-    public GameObject SUV;
-    public GameObject tractor;
-    public GameObject delivery;
-
-    private void Start()
-    {
-        chosenRaceCar = false;
-        chosenSedan = false;
-        chosenSUV = false;
-        chosenTractor = false;
-        chosenDelivery = false;
-    }
-
-    public void ChosenRaceCar()
-    {
-        SetModelActivity(raceCar);
-
-        SetModelInactivity(sedan, chosenSedan);
-        SetModelInactivity(SUV, chosenSUV);
-        SetModelInactivity(tractor, chosenTractor);
-        SetModelInactivity(delivery, chosenDelivery);
     }
 
     public void ChosenSedan()
     {
-        SetModelActivity(sedan);
-
-        SetModelInactivity(raceCar, chosenRaceCar);
-        SetModelInactivity(SUV, chosenSUV);
-        SetModelInactivity(tractor, chosenTractor);
-        SetModelInactivity(delivery, chosenDelivery);
+        foreach (ScriptableObject vehicleObject in vehicles)
+        {
+            if (vehicleObject.name == "Object_Sedan")
+            {
+                Falsify();
+                isSedan = true;
+                Debug.Log("Object: " + vehicleObject);
+                Debug.Log("Sedan = " + isSedan);
+            }
+        }
     }
 
     public void ChosenSUV()
     {
-        SetModelActivity(SUV);
-
-        SetModelInactivity(raceCar, chosenRaceCar);
-        SetModelInactivity(sedan, chosenSedan);
-        SetModelInactivity(tractor, chosenTractor);
-        SetModelInactivity(delivery, chosenDelivery);
+        foreach (ScriptableObject vehicleObject in vehicles)
+        {
+            if (vehicleObject.name == "Object_SUV")
+            {
+                Falsify();
+                isSUV = true;
+                Debug.Log("Object: " + vehicleObject);
+                Debug.Log("SUV = " + isSUV);
+            }
+        }
     }
 
     public void ChosenTractor()
     {
-        SetModelActivity(tractor);
-
-        SetModelInactivity(raceCar, chosenRaceCar);
-        SetModelInactivity(sedan, chosenSedan);
-        SetModelInactivity(SUV, chosenSUV);
-        SetModelInactivity(delivery, chosenDelivery);
+        foreach (ScriptableObject vehicleObject in vehicles)
+        {
+            if (vehicleObject.name == "Object_Tractor")
+            {
+                Falsify();
+                isTractor = true;
+                Debug.Log("Object: " + vehicleObject);
+                Debug.Log("Tractor = " + isTractor);
+            }
+        }
     }
 
     public void ChosenDelivery()
     {
-        SetModelActivity(delivery);
-
-        SetModelInactivity(raceCar, chosenRaceCar);
-        SetModelInactivity(sedan, chosenSedan);
-        SetModelInactivity(SUV, chosenSUV);
-        SetModelInactivity(tractor, chosenTractor);
+        foreach (ScriptableObject vehicleObject in vehicles)
+        {
+            if (vehicleObject.name == "Object_Delivery")
+            {
+                Falsify();
+                isDelivery = true;
+                Debug.Log("Object: " + vehicleObject);
+                Debug.Log("Delivery = " + isDelivery);
+            }
+        }
     }
 
-    private void SetModelActivity(GameObject vehicleModel)
+    private void Falsify()
     {
-        vehicleModel.SetActive(true);
-    }
-
-    private void SetModelInactivity(GameObject vehicleModel, bool vehicleChosen)
-    {
-        vehicleModel.SetActive(false);
-        vehicleChosen = false;
-    }
-    */
+        isRaceCar = false;
+        isSedan = false;
+        isSUV = false;
+        isTractor = false;
+        isDelivery = false;
+}
 }
