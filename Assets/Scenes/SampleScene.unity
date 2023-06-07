@@ -750,6 +750,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9b77dae47dbf7674eb3408ffaa761bd3, type: 3}
   m_PrefabInstance: {fileID: 584741899}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &150545025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a4eb9dfeffa0c8843a811c4030c1aef8, type: 3}
+  m_PrefabInstance: {fileID: 210886803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203675451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2073,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605513393}
   m_CullTransparentMesh: 1
+--- !u!1 &683232017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b77dae47dbf7674eb3408ffaa761bd3, type: 3}
+  m_PrefabInstance: {fileID: 584741899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &689591318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2870,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008442271}
   m_CullTransparentMesh: 1
+--- !u!1 &1018723279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a42678c711200004cbd3861a31219e38, type: 3}
+  m_PrefabInstance: {fileID: 41727793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1041621593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,6 +3491,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193496024}
   m_CullTransparentMesh: 1
+--- !u!1 &1208751756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 129e77e3f0dbf2641b090406116ead8e, type: 3}
+  m_PrefabInstance: {fileID: 2107287334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1231223553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,17 +4448,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756e885e348ff724c959e99b250de474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptVehicleButtons: {fileID: 1387886109}
   colours:
   - {fileID: 11400000, guid: d32ebca6bbdb953458c51dea21507c6b, type: 2}
   - {fileID: 11400000, guid: 107ec6d823c5baf4c8c3a019897a8187, type: 2}
   - {fileID: 11400000, guid: bf0ebed3ce1bab6408a4b54ae78b3836, type: 2}
   - {fileID: 11400000, guid: e646f0918d745964397c720c7d30dee5, type: 2}
   - {fileID: 11400000, guid: c749b65cf7026294babde5ab780ca00b, type: 2}
-  isRed: 0
-  isYellow: 0
-  isGreen: 0
-  isBlue: 0
-  isBlack: 0
+  materialRed: {fileID: 2100000, guid: 534af2a8c34818b47bb6f890d154bb1f, type: 2}
+  materialYellow: {fileID: 2100000, guid: 45b33cea51977bc499a71f633c4bd8d7, type: 2}
+  materialGreen: {fileID: 2100000, guid: 787524e11666c5a49b1fd9c0ea73dcc3, type: 2}
+  materialBlue: {fileID: 2100000, guid: 06e2e6947b973a74c9454e3191dabaa1, type: 2}
+  materialBlack: {fileID: 2100000, guid: b5232f1a18d8532458007544879d0057, type: 2}
 --- !u!1 &1387886107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,11 +4520,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6709df6e2e954b04e93b1256362db7fd, type: 2}
   - {fileID: 11400000, guid: f18f35c978ac17a4aa573c52240520a2, type: 2}
   - {fileID: 11400000, guid: 89adf45f60b5a2e478ad193528543e37, type: 2}
-  isRaceCar: 0
-  isSedan: 0
-  isSUV: 0
-  isTractor: 0
-  isDelivery: 0
+  vehicleIndex: 0
+  modelRaceCar: {fileID: 683232017}
+  modelSedan: {fileID: 1629751780}
+  modelSUV: {fileID: 1018723279}
+  modelTractor: {fileID: 150545025}
+  modelDelivery: {fileID: 1208751756}
 --- !u!1 &1406315072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5120,6 +5142,11 @@ CanvasRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4eb9dfeffa0c8843a811c4030c1aef8, type: 3}
   m_PrefabInstance: {fileID: 210886803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1629751780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f46c9eb640a33a4b82c56f189c67c1a, type: 3}
+  m_PrefabInstance: {fileID: 1414170570}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1663323787
 GameObject:
@@ -6403,7 +6430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 129e77e3f0dbf2641b090406116ead8e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 129e77e3f0dbf2641b090406116ead8e, type: 3}
       propertyPath: m_TagString

@@ -6,11 +6,16 @@ public class Script_VehicleButtons : MonoBehaviour
 {
     [Header("VehicleSelection")]
     [SerializeField] public ScriptableObject[] vehicles;
-    public bool isRaceCar;
-    public bool isSedan;
-    public bool isSUV;
-    public bool isTractor;
-    public bool isDelivery;
+    public int vehicleIndex;
+
+    //Models are already inside ScriptableObjects
+    //Need to find out a way to get them from objects to instantiate them in scene
+    [Header("Vehicle Models")]
+    public GameObject modelRaceCar;
+    public GameObject modelSedan;
+    public GameObject modelSUV;
+    public GameObject modelTractor;
+    public GameObject modelDelivery;
 
     public void ChosenRaceCar()
     {
@@ -18,10 +23,8 @@ public class Script_VehicleButtons : MonoBehaviour
         {
             if (vehicleObject.name == "Object_RaceCar")
             {
-                Falsify();
-                isRaceCar = true;
-                Debug.Log("Object: " + vehicleObject);
-                Debug.Log("Race Car = " + isRaceCar);
+                vehicleIndex = 1;
+                ActivateModels();
             }
         }
     }
@@ -32,10 +35,8 @@ public class Script_VehicleButtons : MonoBehaviour
         {
             if (vehicleObject.name == "Object_Sedan")
             {
-                Falsify();
-                isSedan = true;
-                Debug.Log("Object: " + vehicleObject);
-                Debug.Log("Sedan = " + isSedan);
+                vehicleIndex = 2;
+                ActivateModels();
             }
         }
     }
@@ -46,10 +47,8 @@ public class Script_VehicleButtons : MonoBehaviour
         {
             if (vehicleObject.name == "Object_SUV")
             {
-                Falsify();
-                isSUV = true;
-                Debug.Log("Object: " + vehicleObject);
-                Debug.Log("SUV = " + isSUV);
+                vehicleIndex = 3;
+                ActivateModels();
             }
         }
     }
@@ -60,10 +59,8 @@ public class Script_VehicleButtons : MonoBehaviour
         {
             if (vehicleObject.name == "Object_Tractor")
             {
-                Falsify();
-                isTractor = true;
-                Debug.Log("Object: " + vehicleObject);
-                Debug.Log("Tractor = " + isTractor);
+                vehicleIndex = 4;
+                ActivateModels();
             }
         }
     }
@@ -74,20 +71,56 @@ public class Script_VehicleButtons : MonoBehaviour
         {
             if (vehicleObject.name == "Object_Delivery")
             {
-                Falsify();
-                isDelivery = true;
-                Debug.Log("Object: " + vehicleObject);
-                Debug.Log("Delivery = " + isDelivery);
+                vehicleIndex = 5;
+                ActivateModels();
             }
         }
     }
 
-    private void Falsify()
+    private void ActivateModels()
     {
-        isRaceCar = false;
-        isSedan = false;
-        isSUV = false;
-        isTractor = false;
-        isDelivery = false;
-}
+        switch (vehicleIndex)
+        {
+            case 1:
+                modelRaceCar.SetActive(true);
+
+                modelSedan.SetActive(false);
+                modelSUV.SetActive(false);
+                modelTractor.SetActive(false);
+                modelDelivery.SetActive(false);
+                break;
+            case 2:
+                modelSedan.SetActive(true);
+
+                modelRaceCar.SetActive(false);
+                modelSUV.SetActive(false);
+                modelTractor.SetActive(false);
+                modelDelivery.SetActive(false);
+                break;
+            case 3:
+                modelSUV.SetActive(true);
+
+                modelRaceCar.SetActive(false);
+                modelSedan.SetActive(false);
+                modelTractor.SetActive(false);
+                modelDelivery.SetActive(false);
+                break;
+            case 4:
+                modelTractor.SetActive(true);
+
+                modelRaceCar.SetActive(false);
+                modelSedan.SetActive(false);
+                modelSUV.SetActive(false);
+                modelDelivery.SetActive(false);
+                break;
+            case 5:
+                modelDelivery.SetActive(true);
+
+                modelRaceCar.SetActive(false);
+                modelSedan.SetActive(false);
+                modelSUV.SetActive(false);
+                modelTractor.SetActive(false);
+                break;
+        }
+    }
 }
