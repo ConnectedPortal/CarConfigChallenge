@@ -15,8 +15,7 @@ MonoBehaviour:
   vehicles:
     vehicleName: 4
     vehicleModel: {fileID: 919132149155446097, guid: 129e77e3f0dbf2641b090406116ead8e, type: 3}
-    vehicleColour: 2
     vehiclePrice: 15,000
-    vehicleSpeed: 0
-    vehicleAcceleration: 0
-    vehicleHandling: 0
+    vehicleSpeed: 6
+    vehicleAcceleration: 7
+    vehicleHandling: 5

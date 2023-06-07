@@ -6,17 +6,12 @@ public class Script_ColourButtons : MonoBehaviour
 {
     [Header("Script References")]
     public Script_VehicleButtons scriptVehicleButtons;
+    public Script_VehicleColourChange[] scriptColourChange;
+    public Script_PriceChange scriptPriceChange;
 
     [Header("Colour Selection")]
     [SerializeField] public ScriptableObject[] colours;
     int colourIndex;
-
-    [Header("Materials")]
-    public Material materialRed;
-    public Material materialYellow;
-    public Material materialGreen;
-    public Material materialBlue;
-    public Material materialBlack;
 
     public void ChosenRed()
     {
@@ -25,6 +20,7 @@ public class Script_ColourButtons : MonoBehaviour
             if (vehicleColour.name == "Object_Red")
             {
                 colourIndex = 1;
+                scriptPriceChange.colourPrice = 30;
                 ModelColourChange();
             }
         }
@@ -37,6 +33,7 @@ public class Script_ColourButtons : MonoBehaviour
             if (vehicleColour.name == "Object_Yellow")
             {
                 colourIndex = 2;
+                scriptPriceChange.colourPrice = 40;
                 ModelColourChange();
             }
         }
@@ -49,6 +46,7 @@ public class Script_ColourButtons : MonoBehaviour
             if (vehicleColour.name == "Object_Green")
             {
                 colourIndex = 3;
+                scriptPriceChange.colourPrice = 30;
                 ModelColourChange();
             }
         }
@@ -61,6 +59,7 @@ public class Script_ColourButtons : MonoBehaviour
             if (vehicleColour.name == "Object_Blue")
             {
                 colourIndex = 4;
+                scriptPriceChange.colourPrice = 20;
                 ModelColourChange();
             }
         }
@@ -73,6 +72,7 @@ public class Script_ColourButtons : MonoBehaviour
             if (vehicleColour.name == "Object_Black")
             {
                 colourIndex = 5;
+                scriptPriceChange.colourPrice = 20;
                 ModelColourChange();
             }
         }
@@ -86,19 +86,19 @@ public class Script_ColourButtons : MonoBehaviour
                 switch (scriptVehicleButtons.vehicleIndex)
                 {
                     case 1:
-                        Debug.Log("Race Car is Red");
+                        scriptColourChange[0].ChangeRed();
                         break;
                     case 2:
-                        Debug.Log("Sedan is Red");
+                        scriptColourChange[1].ChangeRed();
                         break;
                     case 3:
-                        Debug.Log("SUV is Red");
+                        scriptColourChange[2].ChangeRed();
                         break;
                     case 4:
-                        Debug.Log("Tractor is Red");
+                        scriptColourChange[3].ChangeRed();
                         break;
                     case 5:
-                        Debug.Log("Delivery is Red");
+                        scriptColourChange[4].ChangeRed();
                         break;
                 }
                 break;
@@ -106,19 +106,19 @@ public class Script_ColourButtons : MonoBehaviour
                 switch (scriptVehicleButtons.vehicleIndex)
                 {
                     case 1:
-                        Debug.Log("Race Car is Yellow");
+                        scriptColourChange[0].ChangeYellow();
                         break;
                     case 2:
-                        Debug.Log("Sedan is Yellow");
+                        scriptColourChange[1].ChangeYellow();
                         break;
                     case 3:
-                        Debug.Log("SUV is Yellow");
+                        scriptColourChange[2].ChangeYellow();
                         break;
                     case 4:
-                        Debug.Log("Tractor is Yellow");
+                        scriptColourChange[3].ChangeYellow();
                         break;
                     case 5:
-                        Debug.Log("Delivery is Yellow");
+                        scriptColourChange[4].ChangeYellow();
                         break;
                 }
                 break;
@@ -126,19 +126,19 @@ public class Script_ColourButtons : MonoBehaviour
                 switch (scriptVehicleButtons.vehicleIndex)
                 {
                     case 1:
-                        Debug.Log("Race Car is Green");
+                        scriptColourChange[0].ChangeGreen();
                         break;
                     case 2:
-                        Debug.Log("Sedan is Green");
+                        scriptColourChange[1].ChangeGreen();
                         break;
                     case 3:
-                        Debug.Log("SUV is Green");
+                        scriptColourChange[2].ChangeGreen();
                         break;
                     case 4:
-                        Debug.Log("Tractor is Green");
+                        scriptColourChange[3].ChangeGreen();
                         break;
                     case 5:
-                        Debug.Log("Delivery is Green");
+                        scriptColourChange[4].ChangeGreen();
                         break;
                 }
                 break;
@@ -146,19 +146,19 @@ public class Script_ColourButtons : MonoBehaviour
                 switch (scriptVehicleButtons.vehicleIndex)
                 {
                     case 1:
-                        Debug.Log("Race Car is Blue");
+                        scriptColourChange[0].ChangeBlue();
                         break;
                     case 2:
-                        Debug.Log("Sedan is Blue");
+                        scriptColourChange[1].ChangeBlue();
                         break;
                     case 3:
-                        Debug.Log("SUV is Blue");
+                        scriptColourChange[2].ChangeBlue();
                         break;
                     case 4:
-                        Debug.Log("Tractor is Blue");
+                        scriptColourChange[3].ChangeBlue();
                         break;
                     case 5:
-                        Debug.Log("Delivery is Blue");
+                        scriptColourChange[4].ChangeBlue();
                         break;
                 }
                 break;
@@ -166,19 +166,19 @@ public class Script_ColourButtons : MonoBehaviour
                 switch (scriptVehicleButtons.vehicleIndex)
                 {
                     case 1:
-                        Debug.Log("Race Car is Black");
+                        scriptColourChange[0].ChangeBlack();
                         break;
                     case 2:
-                        Debug.Log("Sedan is Black");
+                        scriptColourChange[1].ChangeBlack();
                         break;
                     case 3:
-                        Debug.Log("SUV is Black");
+                        scriptColourChange[2].ChangeBlack();
                         break;
                     case 4:
-                        Debug.Log("Tractor is Black");
+                        scriptColourChange[3].ChangeBlack();
                         break;
                     case 5:
-                        Debug.Log("Delivery is Black");
+                        scriptColourChange[4].ChangeBlack();
                         break;
                 }
                 break;

@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Script_VehicleStats : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Slider UI")]
+    public Slider sliderSpeed;
+    public Slider sliderAcceleration;
+    public Slider sliderHandling;
+
     void Start()
     {
-        
+        sliderSpeed.maxValue = 10f;
+        sliderAcceleration.maxValue = 10f;
+        sliderHandling.maxValue = 10f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void VehicleStatChange(float speed, float acceleration, float handling)
     {
-        
+        sliderSpeed.value = speed;
+        sliderAcceleration.value = acceleration;
+        sliderHandling.value = handling;
     }
 }

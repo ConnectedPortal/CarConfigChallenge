@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Script_VehicleButtons : MonoBehaviour
 {
+    [Header("Script References")]
+    public Script_PriceChange scriptPriceChange;
+    public Script_VehicleStats scriptVehicleStats;
+
     [Header("VehicleSelection")]
     [SerializeField] public ScriptableObject[] vehicles;
     public int vehicleIndex;
@@ -24,6 +28,9 @@ public class Script_VehicleButtons : MonoBehaviour
             if (vehicleObject.name == "Object_RaceCar")
             {
                 vehicleIndex = 1;
+                scriptPriceChange.vechiclePrice = 300000;
+                scriptVehicleStats.VehicleStatChange(8, 7, 6);
+
                 ActivateModels();
             }
         }
@@ -36,6 +43,9 @@ public class Script_VehicleButtons : MonoBehaviour
             if (vehicleObject.name == "Object_Sedan")
             {
                 vehicleIndex = 2;
+                scriptPriceChange.vechiclePrice = 50000;
+                scriptVehicleStats.VehicleStatChange(6, 4, 8);
+
                 ActivateModels();
             }
         }
@@ -48,6 +58,9 @@ public class Script_VehicleButtons : MonoBehaviour
             if (vehicleObject.name == "Object_SUV")
             {
                 vehicleIndex = 3;
+                scriptPriceChange.vechiclePrice = 30000;
+                scriptVehicleStats.VehicleStatChange(3, 7, 9);
+
                 ActivateModels();
             }
         }
@@ -60,6 +73,9 @@ public class Script_VehicleButtons : MonoBehaviour
             if (vehicleObject.name == "Object_Tractor")
             {
                 vehicleIndex = 4;
+                scriptPriceChange.vechiclePrice = 15000;
+                scriptVehicleStats.VehicleStatChange(4, 8, 5);
+
                 ActivateModels();
             }
         }
@@ -72,6 +88,9 @@ public class Script_VehicleButtons : MonoBehaviour
             if (vehicleObject.name == "Object_Delivery")
             {
                 vehicleIndex = 5;
+                scriptPriceChange.vechiclePrice = 15000;
+                scriptVehicleStats.VehicleStatChange(6, 7, 5);
+
                 ActivateModels();
             }
         }

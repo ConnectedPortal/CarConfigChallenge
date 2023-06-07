@@ -7,14 +7,14 @@ using TMPro;
 public class Script_PriceChange : MonoBehaviour
 {
     [Header("Values")]
-    public float vechiclePrice;
-    public float colourPrice;
+    public int vechiclePrice;
+    public int colourPrice;
     [SerializeField] private float totalPrice;
 
     [Header("UI")]
     public TMP_Text priceNumber;
 
-    public void Start()
+    public void LateUpdate()
     {
         totalPrice = vechiclePrice + colourPrice;
         priceNumber.text = "£" + totalPrice;
